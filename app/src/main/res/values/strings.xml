@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mtandao</string>
+    <string name="join_your_friends">Join your Friends</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">Create an account</string>
 </resources>
