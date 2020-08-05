@@ -1,8 +1,10 @@
-package com.example.mtandao;
+package com.example.mtandao.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mtandao.R;
 
 public class LoginActivity extends AppCompatActivity {
 

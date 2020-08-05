@@ -7,4 +7,6 @@
     <string name="forgot_password">Forgot password</string>
     <string name="login">Login</string>
     <string name="create_an_account">Create an account</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
