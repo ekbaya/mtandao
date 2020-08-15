@@ -1,15 +1,20 @@
 package com.example.mtandao.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.SearchView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 
 import com.example.mtandao.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
     private FirebaseAuth auth;
 
     @Override
@@ -34,8 +39,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.action_addPost:
+                goToAddPostActivity();
+                break;
+            case R.id.action_logout:
+                logout();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void logout() {
+        auth.signOut();
+        checkUserStatus();
+    }
+
+    private void goToAddPostActivity() {
+        startActivity(new Intent(MainActivity.this, AddPostActivity.class));
+    }
+
+    @Override
     protected void onResume() {
         checkUserStatus();
         super.onResume();
     }
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        return false;
+    }
+
 }

@@ -9,4 +9,7 @@
     <string name="create_an_account">Create an account</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="search">Search</string>
+    <string name="add_post">Add post</string>
+    <string name="logout">Logout</string>
 </resources>
