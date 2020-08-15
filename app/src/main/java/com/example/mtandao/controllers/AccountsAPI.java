@@ -22,6 +22,7 @@ public class AccountsAPI {
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private AccountsListener.RegistrationListener registrationListener;
+    private AccountsListener.LoginListener loginListener;
 
     public AccountsAPI(Context context) {
         this.context = context;
@@ -58,13 +59,41 @@ public class AccountsAPI {
                 });
     }
 
+    public void loginUser(final String email, final String password){
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            loginListener.onSuccessLogin();
+                        }
+                        else {
+                            loginListener.onLoginFailure();
+                        }
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        loginListener.onFailureResponse(e);
+                    }
+                });
+    }
+
     public AccountsListener.RegistrationListener getRegistrationListener() {
         return registrationListener;
     }
 
-
-
     public void setRegistrationListener(AccountsListener.RegistrationListener registrationListener) {
         this.registrationListener = registrationListener;
+    }
+
+    public AccountsListener.LoginListener getLoginListener() {
+        return loginListener;
+    }
+
+    public void setLoginListener(AccountsListener.LoginListener loginListener) {
+        this.loginListener = loginListener;
     }
 }

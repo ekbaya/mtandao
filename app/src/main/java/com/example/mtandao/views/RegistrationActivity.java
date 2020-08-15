@@ -16,7 +16,8 @@ import com.example.mtandao.controllers.AccountsAPI;
 import com.example.mtandao.services.AccountsListener;
 import com.example.mtandao.services.Loader;
 
-public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener, AccountsListener.RegistrationListener {
+public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener,
+        AccountsListener.RegistrationListener {
     private EditText emailEdit, passwordEdit;
     private Button registerBtn, existingAccountBtn;
 
