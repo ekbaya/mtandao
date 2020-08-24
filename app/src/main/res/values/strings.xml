@@ -12,4 +12,7 @@
     <string name="search">Search</string>
     <string name="add_post">Add post</string>
     <string name="logout">Logout</string>
+    <string name="title">Title</string>
+    <string name="enter_post_description">Enter post description</string>
+    <string name="post">Post</string>
 </resources>

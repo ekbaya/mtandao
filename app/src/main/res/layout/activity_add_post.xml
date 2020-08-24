@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".views.AddPostActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:hint="@string/title"
+                android:ems="10"/>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/add_image"/>
+            <EditText
+                android:id="@+id/editDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:ems="10"
+                android:padding="15dp"
+                android:hint="@string/enter_post_description"
+                android:minHeight="120dp"
+                android:gravity="start|top"
+                android:inputType="textCapSentences|textMultiLine"/>
+            <Button
+                android:id="@+id/btnPost"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="@string/post"
+                android:textAllCaps="false"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/button_bg"
+                android:layout_gravity="end"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

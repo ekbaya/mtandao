@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.mtandao.R;
 import com.example.mtandao.controllers.AccountsAPI;
 import com.example.mtandao.services.AccountsListener;
-import com.example.mtandao.services.Loader;
+import com.example.mtandao.utils.Loader;
 
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener,
         AccountsListener.RegistrationListener {
